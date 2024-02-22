@@ -7,7 +7,7 @@ FROM node:20.11.1-slim
 WORKDIR /usr/src/app
 
 # インストール先へ必要なファイルをコピー
-COPY ./server/ ./
+COPY server/ ./
 
 # 依存関係のインストール
 RUN npm ci --only=production
