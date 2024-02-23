@@ -9,10 +9,8 @@ WORKDIR /usr/src/app
 # インストール先へ必要なファイルをコピー
 COPY . ./
 
-# 依存関係のインストール
-RUN npm ci --only=production
-# プロジェクトのビルド
-RUN npm run build
+# 依存関係のインストールとビルド
+RUN npm i && npm run build;
 
 # サーバープログラムの実行
 ENTRYPOINT [ "npm", "run", "start" ]
