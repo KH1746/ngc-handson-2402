@@ -3,8 +3,9 @@ import axios from "axios";
 import useSWR from "swr";
 
 export default function NgcPage() {
-  const { data } = useSWR(["http://localhost:8080/hello"], async ([url]) =>
-    axios.get(url).then((response) => response.data)
+  const { data } = useSWR(
+    ["https://ngc-handson-2402-rzcggdaq2q-de.a.run.app/hello"],
+    async ([url]) => axios.get(url).then((response) => response.data)
   );
 
   return (
